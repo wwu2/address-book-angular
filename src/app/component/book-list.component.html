@@ -1,0 +1,101 @@
+<div class="row column-header">
+    <div class="col-sm-1 header">
+        <input name="checkall" type="checkbox" (change)="toggleCheckAll()" [checked]="checkAll" />
+    </div>
+    <div class="col-sm-1 header">
+        <span (click)="sortByField('id')" class="sortable">{{ 'home.column1' | translate}}<app-sort-icon [order]="getSortOrder('id')">
+            </app-sort-icon></span>
+    </div>
+    <div class="col-sm-2 header">
+        <span class="sortable" (click)="sortByField('name')">{{ 'home.column2' | translate}} <app-sort-icon [order]="getSortOrder('name')">
+            </app-sort-icon></span>
+    </div>
+    <div class="col-sm-2 header">
+        <span class="sortable" (click)="sortByField('location')">{{ 'home.column3' | translate}}<app-sort-icon
+                [order]="getSortOrder('location')"></app-sort-icon></span>
+    </div>
+    <div class="col-sm-2 header">
+        <span class="sortable" (click)="sortByField('office')">{{ 'home.column4' | translate}}<app-sort-icon [order]="getSortOrder('office')">
+            </app-sort-icon></span>
+    </div>
+    <div class="col-sm-4">
+        {{ 'home.column5' | translate}}
+        <div class="row">
+            <div class="col-sm-6">
+                <span class="sortable" (click)="sortByField('office_phone')">{{ 'home.column5-1' | translate}}<app-sort-icon
+                        [order]="getSortOrder('office_phone')"></app-sort-icon></span>
+            </div>
+            <div class="col-sm-6">
+                <span class="sortable" (click)="sortByField('cell_phone')">{{ 'home.column5-2' | translate}}<app-sort-icon
+                        [order]="getSortOrder('cell_phone')"></app-sort-icon></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngFor="let book of clonedBooks" class="row">
+    <ng-container *ngIf="!book.isNew">
+        <div class="col-sm-1 header">
+            <input name="checkall" type="checkbox" [(ngModel)]="book.checked" />
+        </div>
+        <div class="col-sm-1 header">
+            {{book.id}}
+        </div>
+        <div class="col-sm-2 header">
+            {{book.name}}
+        </div>
+        <div class="col-sm-2 header">
+            {{book.location}}
+        </div>
+        <div class="col-sm-2 header">
+            {{book.office}}
+        </div>
+        <div class="col-sm-2 header">
+            {{book.office_phone}}
+        </div>
+        <div *ngIf="!book.editable" class="col-sm-2 header clickable" (dblclick)="doubleClickOnCellPhone(book)">
+            {{book.cell_phone}}
+        </div>
+        <div *ngIf="book.editable" class="col-sm-2 header">
+            <input type="text" [(ngModel)]="book.cell_phone" (change)="changeCellPhone(book)"
+                (blur)="blurOnCellPhone(book)" />
+        </div>
+    </ng-container>
+    <ng-container *ngIf="book.isNew">
+        <div class="col-sm-1 header">
+            <input name="checkall" type="checkbox" [(ngModel)]="book.checked" />
+        </div>
+        <div class="col-sm-1 header">
+           {{book.id}}
+        </div>
+        <div class="col-sm-2 header">
+            <input name="checkall" [(ngModel)]="book.name" />
+        </div>
+        <div class="col-sm-2 header">
+            <input name="checkall" [(ngModel)]="book.location"/>
+        </div>
+        <div class="col-sm-2 header">
+            <input name="checkall" [(ngModel)]="book.office" />
+        </div>
+        <div class="col-sm-2 header">
+            <input name="checkall" [(ngModel)]="book.office_phone" />
+        </div>
+        <div class="col-sm-2 header">
+            <input name="checkall" [(ngModel)]="book.cell_phone" />
+        </div>
+    </ng-container>
+</div>
+
+<div class="row action-button">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-1">
+        <button type="button" class="btn btn-danger" (click)="deleteCheckedItems()">{{ 'home.delete-label' | translate}}</button>
+    </div>
+    <div class="col-sm-6"></div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-warning" (click)="updateChangedItems()">{{ 'home.update-label' | translate}}</button>
+    </div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-warning" (click)="adddNew()">{{ 'home.add-label' | translate}}</button>
+    </div>
+</div>

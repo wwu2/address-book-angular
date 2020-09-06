@@ -1,0 +1,27 @@
+div {
+    text-align: center;
+}
+
+.header{
+    margin-top: 9px;
+}
+
+.column-header{
+    background-color: #C6EFCE;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.action-button .btn{
+    width: 80px;
+}
+
+.sortable{
+    cursor: pointer;
+}
+
+.action-button{
+    margin-top: 10px;
+}

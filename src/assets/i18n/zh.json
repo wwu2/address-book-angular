@@ -1,0 +1,18 @@
+{
+  "home": {
+      "pageTitle" : "地址簿",
+      "languageLabel" : "语言",
+      "column1": "编号",
+      "column2": "姓名",
+      "column3" : "地址",
+      "column4" : "办公室",
+      "column5": "电话",
+      "column5-1": "办公室",
+      "column5-2": "手机",
+      "delete-label": "删除",
+      "update-label": "更新",
+      "add-label": "增加",
+      "cancel-label": "取消",
+      "update-header" : "更新以下地址"
+  }
+}

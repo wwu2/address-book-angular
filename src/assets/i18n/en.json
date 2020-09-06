@@ -1,0 +1,18 @@
+{
+  "home": {
+      "pageTitle" : "Address Book",
+      "languageLabel" : "Language",
+      "column1": "ID",
+      "column2": "Name",
+      "column3" : "Location",
+      "column4" : "Office",
+      "column5": "Phone",
+      "column5-1": "Office",
+      "column5-2": "Cell",
+      "delete-label": "Delete",
+      "update-label": "Update",
+      "add-label": "Add",
+      "cancel-label": "Cancel",
+      "update-header" : "Update the following books"
+  }
+}

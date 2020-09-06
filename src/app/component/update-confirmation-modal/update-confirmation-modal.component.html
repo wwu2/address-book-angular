@@ -1,0 +1,54 @@
+<div class="modal-header">
+    <h4>{{ 'home.update-header' | translate}}</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-sm-1 header">
+            <span>{{ 'home.column1' | translate}}</span>
+        </div>
+        <div class="col-sm-2 header">
+            <span>{{ 'home.column2' | translate}}</span>
+        </div>
+        <div class="col-sm-2 header">
+            <span>{{ 'home.column3' | translate}}</span>
+        </div>
+        <div class="col-sm-2 header">
+            <span>{{ 'home.column4' | translate}}</span>
+        </div>
+        <div class="col-sm-4">
+            {{ 'home.column5' | translate}}
+            <div class="row">
+                <div class="col-sm-6">
+                    <span>{{ 'home.column5-1' | translate}}</span>
+                </div>
+                <div class="col-sm-6">
+                    <span>{{ 'home.column5-2' | translate}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let book of books" class="row">
+        <div class="col-sm-1 header">
+            {{book.id}}
+        </div>
+        <div class="col-sm-2 header">
+            {{book.name}}
+        </div>
+        <div class="col-sm-2 header">
+            {{book.location}}
+        </div>
+        <div class="col-sm-2 header">
+            {{book.office}}
+        </div>
+        <div class="col-sm-2 header">
+            {{book.office_phone}}
+        </div>
+        <div class="col-sm-2 header updated-cell">
+            {{book.cell_phone}}
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="update()">{{ 'home.update-label' | translate}}</button>
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{ 'home.cancel-label' | translate}}</button>
+</div>
